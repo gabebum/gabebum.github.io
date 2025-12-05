@@ -1,0 +1,17 @@
+{
+  "name": "liza-cv-website",
+  "version": "1.0.0",
+  "description": "Легковесный одностраничник на 11ty",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "dev": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
+

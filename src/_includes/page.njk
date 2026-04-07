@@ -3,7 +3,10 @@ layout: base.njk
 ---
 <div class="site-shell">
   <header class="mobile-topbar">
-    <a href="/" class="mobile-logo">Elizaveta Urazova</a>
+    <a href="/" class="mobile-logo">
+      <span class="mobile-logo__name">Elizaveta Urazova</span>
+      <span class="mobile-logo__subtitle">portfolio</span>
+    </a>
     <button type="button" class="burger-menu" id="burgerMenu" aria-label="Открыть меню" aria-expanded="false" aria-controls="sidebar">
       <span></span>
       <span></span>
@@ -12,7 +15,10 @@ layout: base.njk
   </header>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
   <aside class="sidebar" id="sidebar">
-    <a href="/" class="sidebar-logo">Elizaveta Urazova</a>
+    <a href="/" class="sidebar-logo">
+      <span class="sidebar-logo__name">Elizaveta Urazova</span>
+      <span class="sidebar-logo__subtitle">portfolio</span>
+    </a>
     <nav class="sidebar-nav" aria-label="Основное меню">
       <ul class="sidebar-menu" id="navbarMenu">
         {% for item in navigation %}

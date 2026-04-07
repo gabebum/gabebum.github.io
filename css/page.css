@@ -1,0 +1,153 @@
+.page-inner {
+  max-width: 900px;
+}
+
+.page-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: lowercase;
+  color: var(--color-text);
+}
+
+.page-lead {
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.page-inner--gallery {
+  max-width: none;
+  width: 100%;
+}
+
+.page-title--gallery {
+  margin-bottom: 28px;
+}
+
+.page-inner--about {
+  max-width: min(40rem, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-inner--about .page-title {
+}
+
+.page-inner--about .page-lead {
+}
+
+.page-inner--about .about-me__photo {
+  display: block;
+  margin: 0 auto 1.75rem;
+  max-width: min(20rem, 88%);
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(55, 54, 54, 0.14);
+}
+
+.about-me__cta-label {
+  margin-top: 2rem;
+  font-weight: 400;
+}
+
+.about-me__contacts {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.page-inner--about .about-me__contacts {
+}
+
+.about-me__contacts li {
+  margin: 0;
+  padding: 0;
+}
+
+.about-me__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 2.75rem;
+  padding: 0.2rem 0.35rem 0.2rem 0;
+  margin-left: -0.35rem;
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+.page-inner--about .about-me__contact {
+  margin-left: 0;
+  justify-content: center;
+  text-align: left;
+}
+
+.about-me__contact:hover {
+  color: #1565c0;
+}
+
+.about-me__contact:focus-visible {
+  outline: 2px solid #4a9eff;
+  outline-offset: 2px;
+}
+
+.about-me__icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+  display: block;
+}
+
+.about-me__contact-label {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.about-me__contact-label--phone {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.35rem;
+}
+
+.about-me__phone-code {
+  letter-spacing: 0.02em;
+}
+
+.about-me__phone-divider {
+  width: 1px;
+  height: 1em;
+  align-self: center;
+  background: currentColor;
+  opacity: 0.35;
+  flex-shrink: 0;
+}
+
+.about-me__phone-number {
+  letter-spacing: 0.03em;
+}
+
+.video-page__portfolio-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
+}
+
+.video-page__portfolio-link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  overflow-wrap: anywhere;
+}
+
+.video-page__portfolio-link:hover {
+  opacity: 0.85;
+}

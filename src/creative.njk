@@ -1,0 +1,10 @@
+---
+layout: page.njk
+title: creative · Elizaveta Urazova
+permalink: /creative/index.html
+---
+{% from "photo-grid.njk" import render as photoGrid %}
+<div class="page-inner page-inner--gallery">
+  <h1 class="page-title page-title--gallery">creative</h1>
+  {{ photoGrid(creativePhotos) }}
+</div>

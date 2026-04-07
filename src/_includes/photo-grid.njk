@@ -1,0 +1,38 @@
+{% macro render(photos) %}
+<div class="photo-grid" data-photo-lightbox>
+  {% for photo in photos %}
+  <figure class="photo-grid__cell" tabindex="0" role="button" aria-label="Открыть фото {{ loop.index }} из {{ photos | length }}">
+    <img
+      src="{{ photo.src }}"
+      alt="{{ photo.alt | default('') }}"
+      loading="lazy"
+      decoding="async"
+    >
+  </figure>
+  {% endfor %}
+</div>
+<div
+  class="photo-lightbox"
+  id="photoLightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Просмотр галереи"
+  tabindex="-1"
+  hidden
+>
+  <div class="photo-lightbox__backdrop js-photo-lightbox-close" aria-hidden="true"></div>
+  <div class="photo-lightbox__dialog">
+    <div class="photo-lightbox__toolbar">
+      <p class="photo-lightbox__counter" id="photoLightboxCounter" aria-live="polite"></p>
+      <button type="button" class="photo-lightbox__close js-photo-lightbox-close" aria-label="Закрыть галерею">×</button>
+    </div>
+    <div class="photo-lightbox__row">
+      <button type="button" class="photo-lightbox__nav photo-lightbox__nav--prev" id="photoLightboxPrev" aria-label="Предыдущее фото">‹</button>
+      <div class="photo-lightbox__stage">
+        <img src="" alt="" id="photoLightboxImg" class="photo-lightbox__img">
+      </div>
+      <button type="button" class="photo-lightbox__nav photo-lightbox__nav--next" id="photoLightboxNext" aria-label="Следующее фото">›</button>
+    </div>
+  </div>
+</div>
+{% endmacro %}

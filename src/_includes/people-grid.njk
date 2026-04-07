@@ -1,0 +1,50 @@
+{% macro render(items) %}
+<div class="video-grid" data-people-grid>
+  {% for item in items %}
+  <button
+    type="button"
+    class="video-grid__card"
+    data-people-index="{{ loop.index0 }}"
+    data-people-title="{{ item.title | default('') | e }}"
+    aria-label="Открыть: {{ item.title | default('') | e }}"
+  >
+    <span class="video-grid__cover{% if not item.poster %} video-grid__cover--placeholder{% endif %}">
+      {% if item.poster %}
+      <img class="video-grid__poster" src="{{ item.poster }}" alt="" loading="lazy" decoding="async">
+      {% endif %}
+      <span class="video-grid__cover-shade" aria-hidden="true"></span>
+      <span class="video-grid__card-title">{{ item.title | default('') }}</span>
+    </span>
+  </button>
+  <template id="people-item-{{ loop.index0 }}">
+    <div class="md-content">
+      {% if item.body %}{{ item.body | markdown | safe }}{% endif %}
+      {% if item.description %}
+      <div class="md-content__suffix">{{ item.description | markdown | safe }}</div>
+      {% endif %}
+    </div>
+  </template>
+  {% endfor %}
+</div>
+<div
+  class="people-modal-overlay"
+  id="peopleOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="peopleOverlayTitle"
+  aria-describedby="peopleOverlayBody"
+  tabindex="-1"
+  hidden
+>
+  <div class="people-modal-overlay__backdrop js-people-overlay-close" aria-hidden="true"></div>
+  <div class="people-modal-overlay__slot">
+    <div class="people-modal">
+      <header class="people-modal__header">
+        <h2 class="people-modal__title" id="peopleOverlayTitle"></h2>
+        <button type="button" class="people-modal__close js-people-overlay-close" aria-label="Закрыть">×</button>
+      </header>
+      <div class="people-modal__body md-content" id="peopleOverlayBody"></div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

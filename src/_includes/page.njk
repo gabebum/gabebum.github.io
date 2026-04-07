@@ -1,0 +1,36 @@
+---
+layout: base.njk
+---
+<div class="site-shell">
+  <header class="mobile-topbar">
+    <a href="/" class="mobile-logo">Elizaveta Urazova</a>
+    <button type="button" class="burger-menu" id="burgerMenu" aria-label="Открыть меню" aria-expanded="false" aria-controls="sidebar">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
+  <aside class="sidebar" id="sidebar">
+    <a href="/about-me/" class="sidebar-logo">Elizaveta Urazova</a>
+    <nav class="sidebar-nav" aria-label="Основное меню">
+      <ul class="sidebar-menu" id="navbarMenu">
+        {% for item in navigation %}
+        <li>
+          <a
+            href="{{ item.url }}"
+            class="nav-link{% if page.url == item.url or (item.url == '/' and (page.url == '/' or page.url == '/index.html')) %} is-active{% endif %}"
+          >{{ item.label }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+  <main class="main-content">
+    {{ content | safe }}
+  </main>
+</div>
+<script src="/js/menu.js"></script>
+<script src="/js/photo-gallery.js"></script>
+<script src="/js/video-overlay.js"></script>
+<script src="/js/people-overlay.js"></script>

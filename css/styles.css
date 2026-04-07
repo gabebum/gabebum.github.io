@@ -1,0 +1,13 @@
+/**
+ * Точка входа: порядок @import важен (общие правила → раскладка → компоненты).
+ */
+@import url("base.css");
+@import url("page.css");
+@import url("shell.css");
+@import url("sidebar-nav.css");
+@import url("mobile-drawer.css");
+@import url("photo-grid.css");
+@import url("photo-lightbox.css");
+@import url("video-grid.css");
+@import url("video-overlay.css");
+@import url("people-overlay.css");

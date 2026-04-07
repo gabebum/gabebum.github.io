@@ -5,13 +5,17 @@
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "compress-gallery": "node scripts/compress-gallery.mjs",
+    "compress-creative": "node scripts/compress-gallery.mjs --src images/newimages --out images/creative --prefix cr",
+    "compress-milana": "node scripts/compress-gallery.mjs --src images/people/milana-khametova-in --out images/people/milana-khametova --keep-names"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it": "^14.1.1",
+    "sharp": "^0.34.5"
   }
 }
-

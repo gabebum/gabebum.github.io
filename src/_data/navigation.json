@@ -1,0 +1,8 @@
+[
+  { "label": "people", "url": "/" },
+  { "label": "commercial", "url": "/commercial/" },
+  { "label": "creative", "url": "/creative/" },
+  { "label": "video", "url": "/video/" },
+  { "label": "my projects", "url": "/my-projects/" },
+  { "label": "about me", "url": "/about-me/" }
+]

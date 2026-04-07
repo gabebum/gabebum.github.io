@@ -1,0 +1,137 @@
+.mobile-topbar {
+  display: none;
+}
+
+.nav-backdrop {
+  display: none;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 6px;
+}
+
+.burger-menu span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  border-radius: 1px;
+}
+
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    padding: 0 16px;
+    background: var(--color-page-bg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+  }
+
+  .mobile-logo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .mobile-logo:hover {
+    color: #1565c0;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .site-shell {
+    flex-direction: column;
+    padding-top: 56px;
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    height: 100dvh;
+    max-height: 100vh;
+    min-height: 100dvh;
+    padding: calc(56px + 12px) 28px 32px;
+    border-right: none;
+    box-shadow: none;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+
+  body.nav-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  body.nav-open .nav-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .main-content {
+    padding: 32px 20px 48px;
+  }
+
+  .nav-link {
+    padding: 8px 0;
+    font-size: 1rem;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+}

@@ -1,0 +1,53 @@
+{% macro render(items) %}
+<div class="video-grid" data-video-grid>
+  {% for item in items %}
+  <button
+    type="button"
+    class="video-grid__card"
+    data-video-embed="{{ item.embed | e }}"
+    data-video-title="{{ item.title | default('Видео') | e }}"
+    data-video-description="{{ (item.description | default('')) | e }}"
+    aria-label="Открыть видео: {{ item.title | default('Видео') | e }}"
+  >
+    <span class="video-grid__cover{% if not item.poster %} video-grid__cover--placeholder{% endif %}">
+      {% if item.poster %}
+      <img class="video-grid__poster" src="{{ item.poster }}" alt="" loading="lazy" decoding="async">
+      {% endif %}
+      <span class="video-grid__cover-shade" aria-hidden="true"></span>
+      <span class="video-grid__card-title">{{ item.title | default('Видео') }}</span>
+    </span>
+  </button>
+  {% endfor %}
+</div>
+<div
+  class="video-overlay"
+  id="videoOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="videoOverlayTitle"
+  tabindex="-1"
+  hidden
+>
+  <div class="video-overlay__backdrop js-video-overlay-close" aria-hidden="true"></div>
+  <div class="video-overlay__dialog">
+    <div class="video-overlay__stack">
+      <div class="video-overlay__head">
+        <h2 class="video-overlay__title" id="videoOverlayTitle"></h2>
+        <button type="button" class="video-overlay__close js-video-overlay-close" aria-label="Закрыть видео">×</button>
+      </div>
+      <div class="video-overlay__player">
+        <div class="video-overlay__frame">
+          <iframe
+            class="video-overlay__iframe"
+            id="videoOverlayIframe"
+            title=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <p class="video-overlay__description" id="videoOverlayDescription"></p>
+    </div>
+  </div>
+</div>
+{% endmacro %}

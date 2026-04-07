@@ -1,0 +1,18 @@
+---
+layout: page.njk
+title: video · Elizaveta Urazova
+permalink: /video/index.html
+---
+{% from "video-grid.njk" import render as videoGrid %}
+<div class="page-inner page-inner--gallery">
+  <h1 class="page-title page-title--gallery">video</h1>
+  <p class="page-lead">
+    <a
+      href="https://elizaveta-urazova.yonote.ru/share/vid_portfolio?v=6fb906ac-d27b-400a-963a-fa476e71cf90"
+      class="video-page__portfolio-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Видео тут</a>
+  </p>
+  {{ videoGrid(videoItems) }}
+</div>

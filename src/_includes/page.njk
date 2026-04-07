@@ -12,14 +12,14 @@ layout: base.njk
   </header>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
   <aside class="sidebar" id="sidebar">
-    <a href="/about-me/" class="sidebar-logo">Elizaveta Urazova</a>
+    <a href="/" class="sidebar-logo">Elizaveta Urazova</a>
     <nav class="sidebar-nav" aria-label="Основное меню">
       <ul class="sidebar-menu" id="navbarMenu">
         {% for item in navigation %}
         <li>
           <a
             href="{{ item.url }}"
-            class="nav-link{% if page.url == item.url or (item.url == '/' and (page.url == '/' or page.url == '/index.html')) %} is-active{% endif %}"
+            class="nav-link{% if page.url == item.url or (item.url == '/commercial/' and (page.url == '/' or page.url == '/index.html')) %} is-active{% endif %}"
           >{{ item.label }}</a>
         </li>
         {% endfor %}

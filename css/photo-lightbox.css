@@ -103,6 +103,9 @@ body.photo-lightbox-open {
   align-items: center;
   justify-content: center;
   height: 100%;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .photo-lightbox__img {

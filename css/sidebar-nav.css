@@ -13,6 +13,13 @@
   z-index: 1001;
 }
 
+.sidebar-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+}
+
 .sidebar-logo {
   display: flex;
   flex-direction: column;
@@ -66,4 +73,71 @@
 .nav-link.is-active {
   color: var(--color-text);
   border-bottom-color: var(--color-text);
+}
+
+.sidebar-contacts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.sidebar-contacts li {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.sidebar-contacts__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2rem;
+  padding: 0.15rem 0.25rem 0.15rem 0;
+  margin-left: -0.25rem;
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.sidebar-contacts__link:hover {
+  color: #1565c0;
+}
+
+.sidebar-contacts__link:focus-visible {
+  outline: 2px solid #4a9eff;
+  outline-offset: 2px;
+}
+
+.sidebar-contacts__icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  display: block;
+  opacity: 0.85;
+}
+
+.sidebar-contacts__label {
+  overflow-wrap: anywhere;
+}
+
+.sidebar-contacts__label--phone {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.25rem;
+}
+
+.sidebar-contacts__phone-code {
+  letter-spacing: 0.02em;
+}
+
+.sidebar-contacts__phone-number {
+  letter-spacing: 0.02em;
 }

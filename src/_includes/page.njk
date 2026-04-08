@@ -8,9 +8,7 @@ layout: base.njk
       <span class="mobile-logo__subtitle">portfolio</span>
     </a>
     <button type="button" class="burger-menu" id="burgerMenu" aria-label="Открыть меню" aria-expanded="false" aria-controls="sidebar">
-      <span></span>
-      <span></span>
-      <span></span>
+      Menu
     </button>
   </header>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
@@ -19,18 +17,51 @@ layout: base.njk
       <span class="sidebar-logo__name">Elizaveta Urazova</span>
       <span class="sidebar-logo__subtitle">portfolio</span>
     </a>
+    <div class="sidebar-body">
     <nav class="sidebar-nav" aria-label="Основное меню">
       <ul class="sidebar-menu" id="navbarMenu">
         {% for item in navigation %}
         <li>
           <a
             href="{{ item.url }}"
-            class="nav-link{% if page.url == item.url or (item.url == '/commercial/' and (page.url == '/' or page.url == '/index.html')) %} is-active{% endif %}"
+            class="nav-link{% if page.url == item.url or (item.url == '/' and (page.url == '/' or page.url == '/index.html')) %} is-active{% endif %}"
           >{{ item.label }}</a>
         </li>
         {% endfor %}
       </ul>
     </nav>
+    <ul class="sidebar-contacts" aria-label="Контакты">
+      <li>
+        <a href="https://t.me/gabebum" class="sidebar-contacts__link" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
+          <svg class="sidebar-contacts__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 2L11 13"/>
+            <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+          <span class="sidebar-contacts__label">t.me/gabebum</span>
+        </a>
+      </li>
+      <li>
+        <a href="tel:+79175034305" class="sidebar-contacts__link" aria-label="Позвонить: +7 (917) 503-43-05">
+          <svg class="sidebar-contacts__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="sidebar-contacts__label sidebar-contacts__label--phone">
+            <span class="sidebar-contacts__phone-code">+7</span>
+            <span class="sidebar-contacts__phone-number">(917) 503-43-05</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:elizaveta.uraz@gmail.com" class="sidebar-contacts__link" aria-label="Написать на почту elizaveta.uraz@gmail.com">
+          <svg class="sidebar-contacts__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          <span class="sidebar-contacts__label">elizaveta.uraz@gmail.com</span>
+        </a>
+      </li>
+    </ul>
+    </div>
   </aside>
   <main class="main-content">
     {{ content | safe }}

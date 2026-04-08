@@ -11,6 +11,7 @@
     var btnPrev = document.getElementById('photoLightboxPrev');
     var btnNext = document.getElementById('photoLightboxNext');
     var closeEls = root.querySelectorAll('.js-photo-lightbox-close');
+    var stage = root.querySelector('.photo-lightbox__stage');
 
     if (!grid || !imgEl || !counterEl || !btnPrev || !btnNext) return;
 
@@ -112,5 +113,53 @@
         showAt(index + 1);
       }
     });
+
+    // Свайп влево/вправо по кадру (мобильные)
+    if (stage) {
+      var swipeStartX = null;
+      var swipeStartY = null;
+
+      stage.addEventListener(
+        'touchstart',
+        function(e) {
+          if (root.hidden || !e.touches || !e.touches.length) return;
+          swipeStartX = e.touches[0].clientX;
+          swipeStartY = e.touches[0].clientY;
+        },
+        { passive: true },
+      );
+
+      stage.addEventListener(
+        'touchend',
+        function(e) {
+          if (root.hidden || swipeStartX === null) return;
+          var t = e.changedTouches && e.changedTouches[0];
+          if (!t) {
+            swipeStartX = null;
+            swipeStartY = null;
+            return;
+          }
+          var dx = t.clientX - swipeStartX;
+          var dy = t.clientY - swipeStartY;
+          swipeStartX = null;
+          swipeStartY = null;
+          var minDist = 48;
+          var ratio = 1.35;
+          if (Math.abs(dx) < minDist || Math.abs(dx) < Math.abs(dy) * ratio) return;
+          if (dx < 0) showAt(index + 1);
+          else showAt(index - 1);
+        },
+        { passive: true },
+      );
+
+      stage.addEventListener(
+        'touchcancel',
+        function() {
+          swipeStartX = null;
+          swipeStartY = null;
+        },
+        { passive: true },
+      );
+    }
   });
 })();

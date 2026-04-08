@@ -1,5 +1,9 @@
 ---
 layout: page.njk
-title: commercial · Elizaveta Urazova
+title: people · Elizaveta Urazova
 ---
-{% include "commercial-content.njk" %}
+{% from "people-grid.njk" import render as peopleGrid %}
+<div class="page-inner page-inner--gallery">
+  <h1 class="page-title page-title--gallery">people</h1>
+  {{ peopleGrid(peopleItems) }}
+</div>

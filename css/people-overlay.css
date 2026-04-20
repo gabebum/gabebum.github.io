@@ -145,10 +145,47 @@
   max-height: 400px;
   margin: 0.75em 0 0.85em;
   border-radius: 6px;
+  cursor: zoom-in;
+}
+
+#peoplePhotoLightbox {
+  z-index: 5200;
+}
+
+.people-photo-lightbox__caption {
+  margin: 10px auto 0;
+  max-width: min(96vw, 980px);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #928d8d;
 }
 
 .people-modal .md-content p {
   margin: 0 0 0.85em;
+}
+
+.people-modal .md-content p.md-caption-after-image {
+  margin-top: -0.35em;
+  margin-bottom: 1.1em;
+  color: #928d8d;
+}
+
+.people-modal .md-content p.md-caption-after-image * {
+  color: #928d8d !important;
+}
+
+.people-modal .md-content p.md-caption-inline-image {
+  margin-bottom: 1.1em;
+  color: #928d8d;
+}
+
+.people-modal .md-content p.md-caption-inline-image > img {
+  margin: 0.75em 0 0.2em;
+}
+
+.people-modal .md-content p.md-caption-inline-image * {
+  color: #928d8d !important;
 }
 
 .people-modal .md-content p:last-child {

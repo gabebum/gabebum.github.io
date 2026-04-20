@@ -1,5 +1,13 @@
+*Милана Хаметова — российская певица, видеоблогер, актриса и модель.*
+
 [Милана Хаметова - Рок Стар (клип)](https://www.youtube.com/watch?v=hm3nRtiSlPM)
+
 ![Кадр из клипа «Рок Стар»](/images/people/milana-khametova/milana-khametova-rock-star.webp)
+*клип Рок Стар 2024*
+
+
+
+
 
 ![Концерт](/images/people/milana-khametova/milana-khametova-concert.webp)
 *образ и сопровождение артиста на концерте в Известиях холл*
